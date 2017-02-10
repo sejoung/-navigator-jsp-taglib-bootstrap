@@ -6,6 +6,13 @@
 	<name>Navigator</name>
 	<description>Navigator</description>
 	<url>https://github.com/sejoung</url>
+	<scm>
+		<url>https://github.com/sejoung/navigator-jsp-taglib-bootstrap.git</url>
+		<developerConnection>sejoung@gmail.com</developerConnection>
+	</scm>
+	<issueManagement>
+		<url>https://github.com/sejoung/navigator-jsp-taglib-bootstrap/issues</url>
+	</issueManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
