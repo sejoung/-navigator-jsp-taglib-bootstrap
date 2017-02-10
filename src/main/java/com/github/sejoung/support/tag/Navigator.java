@@ -101,7 +101,7 @@ public class Navigator extends BodyTagSupport {
 		startPageOfBlock = Long.valueOf((currentBlock.longValue() - 1) * pagePerBlock.longValue() + 1);
 		firstPage = Long.valueOf("0");
 		lastPage = pageCount;
-		prevPage = Long.valueOf(startPageOfBlock.longValue() != 1 ? startPageOfBlock.longValue() - 1 : 1);
+		prevPage = Long.valueOf(startPageOfBlock.longValue() != 1 ? startPageOfBlock.longValue() - 1 : 0);
 		nextPage = Long.valueOf(currentBlock != blockCount ? (startPageOfBlock.longValue() + pagePerBlock.longValue())-1 : lastPage.longValue());
 		if (totalRecordCount.longValue() == 0)
 			nextPage = Long.valueOf("0");
@@ -117,9 +117,9 @@ public class Navigator extends BodyTagSupport {
 		long page_n = (page.longValue()-1);
 		StringBuffer rtn = new StringBuffer();
 		if (currentPage.longValue() == page_n) {
-			rtn.append(rtn).append("<li class=\"active\"><a href=\"#\">").append(page).append("<span class=\"sr-only\">(current)</span></a></li>");
+			rtn.append(rtn).append("<li class=\"active\"><a href=\"#\">").append(page.longValue()).append("<span class=\"sr-only\">(current)</span></a></li>");
 		} else {
-			rtn.append(rtn).append("<li onclick=\"javascript:goPage('" + page_n + "');\"><a href=\"#\">").append(page).append("</a></li>");
+			rtn.append(rtn).append("<li onclick=\"javascript:goPage('" + page_n + "');\"><a href=\"#\">").append(page.longValue()).append("</a></li>");
 		}
 		return rtn.toString();
 	}
@@ -135,7 +135,7 @@ public class Navigator extends BodyTagSupport {
 		init();
 		buffer.append("<nav>");
 		buffer.append("<ul class=\"pagination\">");
-		if (prevPage.longValue() == startPageOfBlock.longValue()) {
+		if (prevPage.longValue() == firstPage.longValue()) {
 			buffer.append("<li class=\"disabled\"><a href=\"#\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>").append("\r\n");
 		} else {
 			buffer.append("<li onclick=\"javascript:goPage('" + (prevPage.longValue()-1) + "');\"><a href=\"#\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>").append("\r\n");
@@ -157,7 +157,7 @@ public class Navigator extends BodyTagSupport {
 		if(showPage.longValue() == lastPage.longValue()){
 			buffer.append("<li class=\"disabled\"><a href=\"#\" aria-label=\"Next\"><span aria-hidden=\"true\">&raquo;</span></a></li>").append("\r\n");
 		} else {
-			buffer.append("<li onclick=\"javascript:goPage('" + nextPage + "');\"><a href=\"#\" aria-label=\"Next\"><span aria-hidden=\"true\">&raquo;</span></a></li>").append("\r\n");
+			buffer.append("<li onclick=\"javascript:goPage('" + nextPage.longValue() + "');\"><a href=\"#\" aria-label=\"Next\"><span aria-hidden=\"true\">&raquo;</span></a></li>").append("\r\n");
 		}
 		buffer.append("</ul>\r\n");
 		buffer.append("</nav>\r\n");
