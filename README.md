@@ -2,6 +2,24 @@
 
 부트스트랩을 적용해서 페이징 테크라이브러리를 만듬
 
+
+```javascript
+
+function goPage(page){
+	
+	document.getElementById('page').value = page;
+	document.frm.submit();
+	
+}
+
+
+```
+
+
+자바스크립트 function을 정의 해놓았다 goPage라는 펑션에 이동할 페이지번호를 넘기도록 코딩해 놓음 위에 펑션을 정의해서 쓰면 된다.
+
+
+
 ```html
 
 <%@ taglib prefix="navi" uri="http://github.com/sejoung/navigator-jsp-taglib-bootstrap" %>
