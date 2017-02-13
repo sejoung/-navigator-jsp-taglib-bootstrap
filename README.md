@@ -23,7 +23,10 @@ maven pom.xml에 추가
 ```
 
 currentPage : 현재페이지 번호 (0부터 시작)
+
 countPerPage : 페이지에 보이는 리스트 갯수
+
 pagePerBlock : 페이징에서 보이는 갯수
+
 totalRecordCount : 전체 카운트
 
