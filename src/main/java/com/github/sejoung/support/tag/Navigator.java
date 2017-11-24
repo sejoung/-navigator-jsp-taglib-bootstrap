@@ -110,7 +110,7 @@ public class Navigator extends BodyTagSupport {
 	/**
 	 * page number makelink
 	 * 
-	 * @param page
+	 * @param page paging number
 	 * @return html
 	 */
 	private String makeLink(Long page) {
